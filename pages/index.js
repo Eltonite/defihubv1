@@ -5,11 +5,12 @@ import Quickswap from './defiApps/Quickswap'
 import Uniswap from './defiApps/Uniswap'
 import Curve from './defiApps/Curve'
 import Aave from './defiApps/Aave'
+import DefiHome from './defiApps/DefiHome'
 
 
 export default function Home() {
 
-  const [hub, setHub] = useState(1);
+  const [hub, setHub] = useState(0);
 
   const changeDapp = (view) => {
     setHub(view)
@@ -53,6 +54,7 @@ export default function Home() {
       </Head>
 
       <div className={`flex flex-grow p-2 w-fit flex-row-reverse ${darkBorder}`}>
+        {hub === 0 && <DefiHome color={theme[1]}/> } 
         {hub === 1 && <Quickswap /> } 
         {hub === 2 && <Uniswap /> }
         {hub === 3 && <Curve /> } 
