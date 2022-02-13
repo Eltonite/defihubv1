@@ -15,8 +15,6 @@ export default function Home() {
     setHub(view)
   }
 
-  
-
   //const themePack = [`bg-purple-500`,`bg-purple-800`,`border-purple-500`,`border-purple-800`]
 
   // const lightBG = `bg-purple-500`
@@ -24,7 +22,7 @@ export default function Home() {
   // const lightBorder = `border-purple-500`
   // const darkBorder = `border-purple-800`
 
-  const defaultTheme = [`bg-slate-500`,`bg-slate-800`,`border-slate-500`,`border-slate-800`, `fill-slate-800`]
+  const defaultTheme = [`bg-zinc-500`,`bg-zinc-800`,`border-zinc-500`,`border-zinc-800`, `fill-zinc-800`]
 
   const [theme, setTheme] = useState(defaultTheme)
 
@@ -38,6 +36,10 @@ export default function Home() {
     setTheme(themeColor)
   }
 
+  
+  useEffect(()=>{
+    setTheme(defaultTheme)
+  }, [])
 
   
   return (
