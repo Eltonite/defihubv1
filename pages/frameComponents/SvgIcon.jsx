@@ -6,8 +6,10 @@ import curve from '/public/curve.png'
 import quickswap from '/public/quickswap.png'
 
 function SvgIcon(props) {
+
+  const testColor = props.color
   return (
-      <div className='h-12 w-12 z-10 rounded-lg flex text-center items-center bg-teal-600 '>
+      <div className={`h-12 w-12 z-10 rounded-lg flex text-center items-center ${testColor}`}>
         <div className='flex-1'>
 
           {props.icon === 'Q' && <Image src={quickswap} alt="me" width={32} height={32} />}
