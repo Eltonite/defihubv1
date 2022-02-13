@@ -11,7 +11,7 @@ export default function Home() {
 
   const [hub, setHub] = useState(1);
 
-  const changeView = (view) => {
+  const changeDapp = (view) => {
     setHub(view)
   }
 
@@ -24,18 +24,15 @@ export default function Home() {
   // const lightBorder = `border-purple-500`
   // const darkBorder = `border-purple-800`
 
-  const allColors = {
-    red: [`bg-red-500`,`bg-red-800`,`border-red-500`,`border-red-800`],
-    blue: [`bg-blue-500`,`bg-blue-800`,`border-blue-500`,`border-blue-800`],
-    purple: [`bg-purple-500`,`bg-purple-800`,`border-purple-500`,`border-purple-800`]
-  }
+  const defaultTheme = [`bg-slate-500`,`bg-slate-800`,`border-slate-500`,`border-slate-800`, `fill-slate-800`]
 
-  const [theme, setTheme] = useState(allColors.purple)
+  const [theme, setTheme] = useState(defaultTheme)
 
   const lightBG = theme[0]
   const darkBG = theme[1]
   const lightBorder = theme[2]
   const darkBorder = theme[3]
+  const darkFill = theme[4]
 
   const changeTheme = (themeColor) => {
     setTheme(themeColor)
@@ -61,7 +58,7 @@ export default function Home() {
       </div>
       
       <div className={`h-screen w-20 p-2 z-10 ${darkBG}`}>
-        <NavBar function={changeView} color={lightBG}/>
+        <NavBar changeDapp={changeDapp} changeTheme={changeTheme} color={lightBG} fill={darkFill}/>
       </div>
       
 
